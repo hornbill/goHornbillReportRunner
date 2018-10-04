@@ -1,0 +1,18 @@
+{
+    "APIKey": "yourapikey",
+    "InstanceID": "yourinstanceid",
+    "Reports":[
+        {
+            "ReportID":6,
+            "ReportName":"Change Requests",
+            "DeleteReportInstance": true,
+            "ReportFolder":"//some/network/drive"
+        },
+        {
+            "ReportID":5,
+            "ReportName":"Scheduled Changes",
+            "DeleteReportInstance": true,
+            "ReportFolder":"//some/network/drive"
+        }
+    ]
+}
