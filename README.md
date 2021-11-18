@@ -35,6 +35,13 @@ Example JSON File:
             "ReportName":"Scheduled Changes",
             "DeleteReportInstance": true,
             "ReportFolder":"//some/network/drive"
+        },
+        {
+            "ReportID":2,
+            "ReportName":"IT Team",
+            "DeleteReportInstance": true,
+            "ReportFolder":"//some/network/drive",
+            "OutputFileName":"it_team.csv"
         }
     ]
 }
@@ -47,6 +54,7 @@ Example JSON File:
         - "ReportName" - The name of the report to be run
         - "DeleteReportInstance" - Boolean true or false, to define if the report run instance should be removed after the report run has completed
         - "ReportFolder" - The network or local drive location where you with to save the output report files
+        - "OutputFileName" - The name of the file to output to. Please note that an existing file of that name WILL be overwritten.
 
 ## Execute
 

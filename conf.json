@@ -13,6 +13,13 @@
             "ReportName":"Scheduled Changes",
             "DeleteReportInstance": true,
             "ReportFolder":"//some/network/drive"
+        },
+        {
+            "ReportID":2,
+            "ReportName":"IT Team",
+            "DeleteReportInstance": true,
+            "ReportFolder":"//some/network/drive",
+            "OutputFileName":"it_team.csv"
         }
     ]
 }

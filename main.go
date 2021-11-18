@@ -140,7 +140,11 @@ func getReportContent(reportOutput paramsReportStruct, espXmlmc *apiLib.XmlmcIns
 func getFile(reportRun reportRunStruct, file reportFileStruct, espXmlmc *apiLib.XmlmcInstStruct, report reportStruct) {
 	hornbillHelpers.Logger(3, "Retrieving "+file.Type+" Report File "+file.Name, true, logFile)
 	//Create file for data dump
-	out, err := os.Create(report.ReportFolder + "/" + file.Name)
+	outputFileName := file.Name
+	if report.OutputFileName != "" {
+		outputFileName = report.OutputFileName
+	}
+	out, err := os.Create(report.ReportFolder + "/" + outputFileName)
 	if err != nil {
 		hornbillHelpers.Logger(4, fmt.Sprintf("%v", err), true, logFile)
 	}
@@ -174,7 +178,7 @@ func getFile(reportRun reportRunStruct, file reportFileStruct, espXmlmc *apiLib.
 		hornbillHelpers.Logger(4, fmt.Sprintf("%v", err), true, logFile)
 		return
 	}
-	hornbillHelpers.Logger(3, "[SUCCESS] Retrieved report data ["+report.ReportFolder+"/"+file.Name+"]", true, logFile)
+	hornbillHelpers.Logger(3, "[SUCCESS] Retrieved report data ["+report.ReportFolder+"/"+outputFileName+"]", true, logFile)
 	return
 }
 func deleteReportInstance(runID int) {
